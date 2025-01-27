@@ -52,7 +52,7 @@ function render(data){
     const iconURL = data?.weather?.[0]?.icon;
     weatgerIcon.setAttribute('src',`https://openweathermap.org/img/wn/${iconURL}@2x.png`);
     temperature.innerText = `${data?.main?.temp}\u00B0C`;
-    windspeedInfo.innerText = `${data?.wind?.speed} m/sec`;
+    windspeedInfo.innerText = `${data?.wind?.speed}m/sec`;
     humidityInfo.innerText = `${data?.main?.humidity}%`;
     cloudsInfo.innerText = `${data?.clouds?.all}%`;
 }

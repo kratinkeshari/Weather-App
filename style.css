@@ -1,11 +1,245 @@
-.currentTab{
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather Sans", serif;
+}
+
+:root {
+    --colorDarki: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    color: var(--colorLight2);
+    background-image: linear-gradient(16deg, #112d4e 0%, #3f72af 100%);
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.tabSection {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    Justify-content: space-between;
+}
+
+
+.tab {
     cursor: pointer;
-    background-color: red;
-    box-shadow: 2px 2px 2px 2px grey;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
 }
-.searchForm,.userWeatherInfo,.grantAccess,.errorPage,.loading{
-    opacity:0;
+
+.tab.currentTab {
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
 }
-.searchForm.active, .userWeatherInfo.active,.grantAccess.active,.errorPage.active,.loading.active{
-    opacity:1;
+
+
+.userWeatherInfo {
+    margin-block: 2rem;
+}
+
+button[locationAccessBtn] {
+    all: unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 10px 30px;
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grantAccess {
+    display: none;
+}
+
+.grantAccess.active {
+    display: flex;
+}
+
+.grantAccess img {
+    margin-bottom: 2rem;
+}
+
+.grantAccess h3:first-of-type {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.grantAccess h3:last-of-type {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+.loading {
+    display: none;
+}
+
+.loading.active {
+    display: flex;
+}
+
+.loading p {
+    text-transform: uppercase;
+}
+
+.userWeatherInfo {
+    display: none;
+}
+
+.userWeatherInfo.active {
+    display: flex;
+}
+
+.cityDetail {
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.userWeatherInfo p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.userWeatherInfo img {
+    width: 90px;
+    height: 90px;
+}
+
+.cityDetail p {
+    font-size: 2rem;
+}
+
+.cityDetail img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.userWeatherInfo p[temperature] {
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.parameterContainer {
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.parameter {
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    align-items: center;
+}
+
+.parameter img {
+    width: 50px;
+    height: 50px;
+}
+
+.parameter p:first-of-type {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type {
+    font-size: 1.15rem;
+    /* font-weight: 600; */
+}
+
+.searchForm {
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-block: 2rem;
+}
+
+.searchForm.active {
+    display: flex;
+}
+
+.searchForm input {
+    all: unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.searchForm.active {
+    display: flex;
+}
+
+.searchForm input {
+    all: unset;
+    width: calc(90% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.searchForm input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.searchForm input:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.searchForm button {
+    padding: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: none;
+    background-color: rgb(145, 170, 199);
+}
+
+.errorPage {
+    display: none;
 }

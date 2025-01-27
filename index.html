@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather!!!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="wrapper active">
+    <div class="wrapper">
         <h1>Weather App</h1>
-        <div class="tabSection active">
-            <p class="tab active" type="button" dataUserWeather>Your Weather</p>
-            <p class="tab active" type="button" dataSearchWeather>Search Weather</p>
+        <div class="tabSection">
+            <p class="tab" type="button" dataUserWeather>Your Weather</p>
+            <p class="tab" type="button" dataSearchWeather>Search Weather</p>
         </div>
 
+        <!-- Search form -->
+        <form class="searchForm">
+            <input type="text" name="city" placeholder="Search your city...">
+            <button type="submit"><img src="./assets/ser]arching.png" alt="search" width="12" height="12"
+                    loading="lazy"></button>
+        </form>
+
         <!-- User Weather Info -->
-        <div class="userWeatherInfo">
+        <div class="subContainer userWeatherInfo">
             <div class="cityDetail">
                 <p city></p>
                 <img countryFlag>
             </div>
-            <div weatherCondition></div>
-            <div><img weatgerIcon></div>
-            <div temperature></div>
-            <div weatherDetails>
-                <div class="windspeed">
+            <p weatherCondition></p>
+            <img weatgerIcon>
+            <p temperature></p>
+            <div class="parameterContainer" weatherDetails>
+                <div class="parameter windspeed">
                     <img src="./assets/windspeed.png" alt="windspeed" width="80" height="80" loading="lazy">
                     <p>WINDSPEED</p>
                     <p windspeedInfo></p>
                 </div>
-                <div class="humidity">
+                <div class="parameter humidity">
                     <img src="./assets/humidity.png" alt="humidity" width="80" height="80" loading="lazy">
                     <p>HUMIDITY</p>
                     <p humidityInfo></p>
                 </div>
-                <div class="clouds">
+                <div class="parameter clouds">
                     <img src="./assets/clouds.png" alt="clouds" width="80" height="80" loading="lazy">
                     <p>CLOUDS</p>
                     <p cloudsInfo></p>
@@ -43,31 +56,28 @@
         </div>
 
         <!-- Grant Location Access -->
-         <div class="grantAccess">
+        <div class="subContainer grantAccess">
             <img src="./assets/location.png" alt="Location pin point" width="80" height="80" loading="lazy">
             <h3>Grant Location Access</h3>
-            <h4>Allow Access to Get Weather Information</h4>
+            <h3>Allow Access to Get Weather Information</h3>
             <button locationAccessBtn>GRANT ACCESS</button>
-         </div>
+        </div>
 
-         <!-- Search form -->
-         <form class="searchForm">
-            <input type="text" name="city">
-            <button type="submit"><img src="./assets/ser]arching.png" alt="search" width="12" height="12" loading="lazy"></button>
-         </form>
 
-         <!-- Error page -->
-          <div class="errorPage">
+
+        <!-- Error page -->
+        <div class="errorPage">
             <img src="./assets/notfound.png" alt="Error: Not found" width="80" height="80" loading="lazy">
             <h3>The place stated does not exist</h3>
-          </div>
+        </div>
 
         <!-- loading  -->
-         <div class="loading">
+        <div class="subContainer loading">
             <img src="./assets/loading.gif" alt="loading gif" width="150" height="150">
             <p>Loading</p>
-         </div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
