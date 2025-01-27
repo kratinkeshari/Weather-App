@@ -1,0 +1,11 @@
+.currentTab{
+    cursor: pointer;
+    background-color: red;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+.searchForm,.userWeatherInfo,.grantAccess,.errorPage,.loading{
+    opacity:0;
+}
+.searchForm.active, .userWeatherInfo.active,.grantAccess.active,.errorPage.active,.loading.active{
+    opacity:1;
+}
